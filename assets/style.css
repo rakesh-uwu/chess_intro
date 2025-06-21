@@ -173,3 +173,28 @@ audio {
     grid-template-rows: repeat(8, 1.3em);
   }
 }
+/* xd-button */
+#xd-button {
+  display: block;
+  margin: 2rem auto 1.5rem auto;
+  padding: 0.7em 2.2em;
+  font-family: var(--font-main);
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--piece-white);
+  background: linear-gradient(90deg, var(--accent) 70%, var(--board-dark) 100%);
+  border: 3px solid var(--board-dark);
+  border-radius: 0.5em;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+  letter-spacing: 0.05em;
+}
+
+#xd-button:hover, #xd-button:focus {
+  background: var(--hover);
+  color: var(--accent);
+  box-shadow: 0 4px 18px rgba(192,57,43,0.18);
+  outline: none;
+  transform: translateY(-2px) scale(1.04);
+}
