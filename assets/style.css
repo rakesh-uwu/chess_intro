@@ -1,0 +1,175 @@
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&display=swap');
+
+:root {
+  --board-light: #f0d9b5;
+  --board-dark: #b58863;
+  --piece-black: #222;
+  --piece-white: #fff;
+  --accent: #c0392b;
+  --hover: #ffe066;
+  --font-main: 'EB Garamond', serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, var(--board-light) 60%, var(--board-dark) 100%);
+  color: #222;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: var(--board-dark);
+  color: var(--piece-white);
+  padding: 1.5rem 0 1rem 0;
+  text-align: center;
+  letter-spacing: 0.1em;
+  border-bottom: 4px solid var(--board-light);
+}
+
+nav {
+  margin: 1rem 0;
+  text-align: center;
+}
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--hover);
+}
+
+main {
+  flex: 1;
+  max-width: 800px;
+  margin: 2rem auto;
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2rem 2.5rem;
+}
+
+footer {
+  background: var(--board-dark);
+  color: var(--piece-white);
+  text-align: center;
+  padding: 1rem 0 0.5rem 0;
+  font-size: 1rem;
+  border-top: 4px solid var(--board-light);
+  letter-spacing: 0.05em;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-main);
+  color: var(--accent);
+  margin-top: 0;
+}
+
+ul.openings {
+  list-style: square inside;
+  margin: 1.5rem 0;
+  padding: 0 1rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+mark {
+  background: var(--hover);
+  padding: 0.1em 0.3em;
+  border-radius: 0.2em;
+}
+
+code {
+  background: #eee;
+  color: var(--accent);
+  padding: 0.1em 0.4em;
+  border-radius: 0.2em;
+  font-size: 1.1em;
+}
+
+.chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 2.2em);
+  grid-template-rows: repeat(8, 2.2em);
+  border: 6px solid var(--board-dark);
+  margin: 2rem auto 1rem auto;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  background: #fff;
+  border-radius: 0; 
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+}
+
+/* chessboard */
+section > .chessboard {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.square {
+  width: 2.2em;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7em;
+  font-family: 'Segoe UI Symbol', 'EB Garamond', serif;
+  transition: background 0.2s, box-shadow 0.2s;
+  user-select: none;
+  position: relative;
+}
+.square.light {
+  background: var(--board-light);
+}
+.square.dark {
+  background: var(--board-dark);
+}
+.square:hover {
+  background: var(--hover);
+  cursor: pointer;
+}
+
+
+audio {
+  width: 100%;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+/* 404 page */
+.error-404 {
+  text-align: center;
+  margin: 4rem auto;
+}
+.error-404 h1 {
+  font-size: 4em;
+  color: var(--accent);
+}
+.error-404 p {
+  font-size: 1.5em;
+  color: #444;
+}
+.error-404 a {
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1rem 0.5rem;
+  }
+  .chessboard {
+    grid-template-columns: repeat(8, 1.3em);
+    grid-template-rows: repeat(8, 1.3em);
+  }
+}
